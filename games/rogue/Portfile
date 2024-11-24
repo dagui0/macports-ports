@@ -29,6 +29,9 @@ worksrcdir          ${name}${version}
 
 depends_lib-append  port:ncurses
 
+patch.pre_args-replace  -p0 -p1
+patchfiles          modern-c-compat-fix.patch
+
 configure.args-append       --with-ncurses
 configure.cflags-append     -I${prefix}/include/ncurses
 configure.cppflags-append   -I${prefix}/include/ncurses
